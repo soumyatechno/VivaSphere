@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
+
 
 import './globals.css'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -11,8 +12,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Evently',
-  description: 'Evently is a platform for event management.',
+  title: 'VivaSphere',
+  description: 'VivaSphere is a platform for event management.',
   icons: {
     icon: '/assets/images/logo.svg'
   }
@@ -24,10 +25,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+     <ClerkProvider>
       <html lang="en">
         <body className={poppins.variable}>{children}</body>
       </html>
-    </ClerkProvider>
+      </ClerkProvider>
+
   )
 }
